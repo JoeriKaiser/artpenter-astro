@@ -3,48 +3,40 @@ import { Image } from "@astrojs/image/components";
 import heroImage from "assets/hero.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
+import brush1 from "@assets/brushes/brush1.svg"
+import brush2 from "@assets/brushes/brush2.svg"
+import brush3 from "@assets/brushes/brush3.svg"
+import path1 from "@assets/brushes/pathbrush1.svg"
+import Brush from '@components/decorative/brush.astro';
 ---
-
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Image
-      src={heroImage}
-      alt="Astronaut in the air"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free</Link
-      >
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        Github Repo</Link
-      >
+<section class="h-fit border-2 border-blue-700">
+  <div class="z-0 absolute top-0 bottom-0 my-auto h-screen grid grid-cols-3 grid-rows-2">
+    <div class="relative col-span-1 -ml-64 mt-28"><img src={brush1} alt="brush variant 1">
+      <Brush id='hero-1' title="Il ne s'agit pas de peindre" path='M0, 190 C 70, 200 100, 300 250, 180' positioning='-top-60 ml-12' />
+    </div>
+    <div class="relative col-span-1 -ml-32 -mr-32"><img src={brush2} alt="brush variant 2">
+      <Brush id='hero-2' title=" la vie mais de rendre vivante" path='M11.879 139.573c13.552 13.85 32.91 21.829 52.287 21.552 19.375-.277 38.498-8.806 51.65-23.037 4.422-4.786 8.17-10.148 12.303-15.184 4.135-5.037 8.75-9.822 14.423-13.028 9.504-5.37 21.233-5.775 31.802-3.045 10.57 2.73 20.163 8.343 29.17 14.512 9.006 6.168 17.601 12.967 27.026 18.474 9.425 5.508 19.879 9.736 30.787 10.15 9.952.376 20-2.533 28.212-8.167' positioning='-top-20 ml-12' />
+    </div>
+    <div class="relative col-span-1 -mr-64 mt-20"><img src={brush3} alt="brush variant 3">
+      <Brush id='hero-3' title="la peinture... Pierre Bonnard" path='M0, 190 C 70, 200 100, 300 250, 180' positioning='-top-60 ml-12'  />
     </div>
   </div>
-</main>
+  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+    <div class="z-20">
+      <h1
+        class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter m-0">
+        <!-- Lea Stauder -->
+      </h1>
+      <p class="text-lg mt-4 text-slate-600 max-w-xl">
+        Il ne s'agit pas de peindre la vie mais de rendre vivante la peinture... Pierre Bonnard
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <Link href="/contact">
+          <p>
+            Pour me contacter, clique ici!
+          </p>
+        </Link>
+      </div>
+    </div>
+  </main>
+</section>
