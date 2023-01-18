@@ -8,7 +8,13 @@ const {id, title, path, positioning} = Astro.props
     fill="none"
     stroke="none"
     d={path} />
-  <text x="0" font-size="22">
+  <text x="0" font-size="18">
     <textPath href=`#${id}`>{title}</textPath>
   </text>
 </svg>
+
+<style>
+  textPath {
+    font-family: 'Aloja-Light';
+  }
+</style>
