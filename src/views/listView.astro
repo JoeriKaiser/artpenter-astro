@@ -1,0 +1,41 @@
+---
+import { API_GATEWAY, COLORS } from "@utils/constants";
+
+const { data } = Astro.props;
+console.log(data[0].attributes.images.data[0].attributes.url);
+---
+
+<!-- <Fragment>
+  {
+    data.map((item) => (
+      <div>
+        <h1>{item.attributes.title}</h1>
+        <p>{item.attributes.description}</p>
+        <img
+          src={`${API_GATEWAY}${item.attributes.images.data[0].attributes.url}`}
+          alt=""
+        />
+      </div>
+    ))
+  }
+</Fragment> -->
+<div
+  class="w-full px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+  {
+    data.map((item) => (
+      <div
+        class="max-w-sm rounded overflow-hidden shadow-lg"
+        style={{ backgroundColor: COLORS.white }}>
+        <img
+          class="object-cover w-full h-64"
+          src={`${API_GATEWAY}${item.attributes.images.data[0].attributes.url}`}
+          alt=""
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{item.attributes.title}</div>
+          <p class="text-gray-700 text-base">{item.attributes.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

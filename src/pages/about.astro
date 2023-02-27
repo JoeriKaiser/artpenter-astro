@@ -1,25 +1,15 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import { Image } from "@astrojs/image/components";
-import Brush from "@components/decorative/brush.astro";
-import brush2 from "@assets/brushes/brush2.svg"
+import PageHeader from "views/pageHeader.astro";
+import { COLORS } from "@utils/constants";
 ---
 
 <Layout title="About">
-  <main class="grid grid-cols-3">
-    <div class="col-span-2 border-red-700 border-2">
-      <Sectionhead>
-        <Fragment slot="title">PRESENTATION</Fragment>
-        <Fragment slot="desc">Parcours, philosophie et démarche créative.</Fragment>
-      </Sectionhead>
-      <Brush id='about-1' path='M5, 170 C 200, 80 50, 105 270, 152' />
-    </div>
-    
-    <div class="w-full col-span-1">
-      <img class="w-full absolute z-10" src={brush2} alt="brush variant 2" />
-      <Brush id='about-1' path='M5, 170 C 200, 80 50, 105 270, 152' />
-    </div>
-  </main>
+  <PageHeader
+    mainBrushColor={COLORS.black}
+    secondaryBrushColor={COLORS.purpleLight}
+    title="PRESENTATION"
+    subtitle="Parcours, philosophie et démarche créative."
+    id="2"
+  />
 </Layout>

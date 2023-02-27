@@ -7,8 +7,12 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://lea-stauder.art/",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
-  }), mdx(), sitemap(), svelte()]
+  }), mdx({
+    extendMarkdownConfig: false,
+    smartypants: true,
+    gfm: true,
+  }), sitemap(), svelte()]
 });
