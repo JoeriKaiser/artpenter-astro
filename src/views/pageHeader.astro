@@ -15,7 +15,7 @@ const data = await response.json();
 const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
-<section class="grid grid-cols-5 main-section">
+<section class="grid grid-cols-5 main-section z-0">
   <div class="col-span-3 h-full place-items-center grid">
     <div class="w-full">
       <Sectionhead>
@@ -54,6 +54,6 @@ const headerImage = data.data.attributes.source.data.attributes.url;
   }
 
   .main-section {
-    height: 60vw;
+    height: 45vw;
   }
 </style>
