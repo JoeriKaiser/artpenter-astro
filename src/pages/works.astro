@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { COLORS } from "@utils/constants";
+import ListView from "views/listView.astro";
+import PageHeader from "views/pageHeader.astro";
+
+const response = await fetch(`http://localhost:1337/api/peintures?populate=*`);
+const data = await response.json();
+---
+
+<Layout title="About">
+  <PageHeader
+    mainBrushColor={COLORS.purpleLight}
+    secondaryBrushColor={COLORS.black}
+    title="OEUVRES D'ART"
+    subtitle="Parcours, philosophie et démarche créative."
+    id="3"
+  />
+  <ListView data={data.data} />
+</Layout>

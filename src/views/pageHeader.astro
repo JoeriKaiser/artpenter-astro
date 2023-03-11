@@ -1,0 +1,59 @@
+---
+import ImagePane from "@components/decorative/imagePane.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { API_GATEWAY } from "../utils/constants";
+import brush2 from "@assets/brushes/brush2.svg";
+import Brush from "@components/decorative/brush.astro";
+import ContactButton from "@components/ui/contactButton.astro";
+const { id, title, subtitle, mainBrushColor, secondaryBrushColor } =
+  Astro.props;
+
+const response = await fetch(
+  `http://localhost:1337/api/generic-assets/${id}?populate=*`
+);
+const data = await response.json();
+const headerImage = data.data.attributes.source.data.attributes.url;
+---
+
+<section class="grid grid-cols-5 main-section z-0">
+  <div class="col-span-3 h-full place-items-center grid">
+    <div class="w-full">
+      <Sectionhead>
+        <Fragment slot="title">{title}</Fragment>
+        <Fragment slot="desc">{subtitle}</Fragment>
+      </Sectionhead>
+      <div class="w-full rotate-180 z-10">
+        <Brush width="100%" height="100%" color={mainBrushColor} />
+      </div>
+    </div>
+  </div>
+  <div class="col-span-2 w-full grid place-items-center">
+    <div class="relative w-full -mt-52 grid place-items-center">
+      <div class="z-10 absolute rotate-180 mt-56 w-full">
+        <Brush width="100%" height="100%" color={secondaryBrushColor} />
+      </div>
+      <div class="absolute -mt-10 z-0">
+        <ImagePane
+          src={`${API_GATEWAY}${headerImage}`}
+          alt="Welcome art painting"
+        />
+      </div>
+    </div>
+    <div class="absolute bottom-60">
+      <ContactButton />
+    </div>
+  </div>
+</section>
+
+<style>
+  * {
+    font-family: "Aloja-Light";
+  }
+  #about-1 {
+    width: 400px;
+  }
+
+  .main-section {
+    height: 45vw;
+  }
+</style>

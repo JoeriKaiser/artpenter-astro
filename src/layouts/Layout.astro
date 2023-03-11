@@ -3,19 +3,12 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
-import backgroundIG from '@assets/background.svg'
+import backgroundIG from "@assets/background.svg";
+import VerticalNavbar from "@components/navbar/verticalNavbar.astro";
 
 export interface Props {
   title: string;
 }
-
-// const { src } = await   getImage({
-//   src: "../../assets/hero.png",
-//   width: 800,
-//   height: 742,
-//   format: "avif",
-// });
-// console.log(src);
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -28,8 +21,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Artpenter"
-  : "Artpenter - Léa Stauder - Art Portfolio";
+  ? title + " | " + "Art.penter"
+  : "Art.penter - Léa Stauder - Art Portfolio";
 ---
 
 <!DOCTYPE html>
@@ -37,44 +30,50 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-
+    <!-- TODO load screenshot of first contentfull paint -->
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Artpenter is the personal Art Portfolio of Léa Stauder"
+      description="Art.penter is the personal Art Portfolio of Léa Stauder"
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Artpenter - Léa Stauder`,
+          title: `Art.penter - Léa Stauder`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Artpenter Portfolio Preview",
+          alt: "Art.penter Portfolio Preview",
         },
       }}
     />
   </head>
-  <body class="overflow-x-hidden">
-    <div class="absolute z-0 w-screen">
-      <img class="w-screen" src={backgroundIG} alt="background">
-    </div>
-    
-    <section class="relative h-15 z-10">
+  <!-- <body class="grid grid-cols-[200px_minmax(900px,_1fr)_100px] overflow-x-hidden"> -->
+  <body class="relative overflow-x-hidden">
+    <img class="fixed z-0 w-screen" src={backgroundIG} alt="background" />
+    <section class="left-0 h-15 z-50 pt-20 px-10 w-full">
+      <!-- <VerticalNavbar /> -->
       <Navbar />
     </section>
-    <main class="relative z-10 h-fit border-2 border-red-600">
+    <main class="relative z-10">
       <slot />
     </main>
-    <Footer />
+    <!-- <Footer /> -->
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
+      }
+      @font-face {
+        font-family: "Aloja-Light";
+        src: url("fonts/Aloja-Light.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
       }
     </style>
   </body>

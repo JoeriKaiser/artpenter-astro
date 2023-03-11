@@ -1,5 +1,5 @@
 ---
-import { Dropdown, DropdownItems } from "astro-navbar";
+import { Astronav, Dropdown, DropdownItems } from "astro-navbar";
 const { title, lastItem, children } = Astro.props;
 ---
 
@@ -7,7 +7,7 @@ const { title, lastItem, children } = Astro.props;
   <Dropdown class="group">
     <button
       class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-      <span>{title}</span>
+      <span style={{ fontWeight: "900" }}>{title}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -30,12 +30,12 @@ const { title, lastItem, children } = Astro.props;
             : "lg:left-0 origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
+          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col absolute">
           {
             children.map((item) => (
               <a
                 href={item.path}
-                class="py-1 text-gray-600 hover:text-gray-900">
+                class="z-50 py-1 text-gray-600 hover:text-gray-900 cursor-wait">
                 {item.title}
               </a>
             ))
