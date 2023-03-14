@@ -51,7 +51,7 @@ const menuList = [
           <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
       </div>
-      <div class="flex">
+      <div class="hidden lg:flex">
         <div class="flex items-center p-2 mt-2 space-x-2 text-gray-600">
           <Icon class="text-black w-8 h-8" name="mdi:instagram" />
         </div>
@@ -62,9 +62,10 @@ const menuList = [
           <Icon class="text-black w-8 h-8" name="ic:baseline-tiktok" />
         </div>
       </div>
+      <!-- TODO MAKE NAV SHOW UNDER -->
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <div>
-          <ul class="flex flex-col lg:flex-row lg:gap-3">
+          <ul class="absoluteflex flex-col lg:flex-row lg:gap-3">
             {
               menuList.map((item, index) => (
                 <>

@@ -1,5 +1,5 @@
 ---
-import { Astronav, Dropdown, DropdownItems } from "astro-navbar";
+import { Dropdown, DropdownItems } from "astro-navbar";
 const { title, lastItem, children } = Astro.props;
 ---
 
@@ -30,12 +30,12 @@ const { title, lastItem, children } = Astro.props;
             : "lg:left-0 origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col absolute">
+          class="px-3 lg:py-2 bg-opacity-50 lg:rounded-md flex flex-col absolute">
           {
             children.map((item) => (
               <a
                 href={item.path}
-                class="z-50 py-1 text-gray-600 hover:text-gray-900 cursor-wait">
+                class="z-50 py-1 text-gray-600 font-bold hover:text-gray-900 cursor-pointer">
                 {item.title}
               </a>
             ))
