@@ -5,7 +5,6 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 import backgroundIG from "@assets/background.svg";
 import VerticalNavbar from "@components/navbar/verticalNavbar.astro";
-// import Background from "@components/decorative/background.astro";
 import Background from "@components/decorative/Background/Background";
 
 export interface Props {
@@ -53,12 +52,9 @@ const makeTitle = title
       }}
     />
   </head>
-  <!-- <body class="grid grid-cols-[200px_minmax(900px,_1fr)_100px] overflow-x-hidden"> -->
   <body class="relative background">
     <Background />
-    <!-- <img class="fixed z-0 w-screen" src={backgroundIG} alt="background" /> -->
     <section class="left-0 h-15 z-50 pt-20 px-10 w-full">
-      <!-- <VerticalNavbar /> -->
       <Navbar />
     </section>
     <main class="relative z-10">
