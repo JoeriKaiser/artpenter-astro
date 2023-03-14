@@ -5,10 +5,10 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'nav': '',
+        nav: "",
       },
       fontFamily: {
-        sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Proxima Nova", "Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
