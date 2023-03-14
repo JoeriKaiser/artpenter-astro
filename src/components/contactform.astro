@@ -1,5 +1,6 @@
 ---
 import Button from "./ui/button.astro";
+console.log(import.meta.env.FORM_ACCESS_KEY)
 ---
 
 <form
@@ -8,7 +9,7 @@ import Button from "./ui/button.astro";
   id="form"
   class="needs-validation"
   novalidate>
-  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+  <input type="hidden" name="access_key" value={import.meta.env.FORM_ACCESS_KEY}>
   <div class="mb-5">
     <input
       type="text"
@@ -18,23 +19,23 @@ import Button from "./ui/button.astro";
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-      Please provide your full name.
+      Veuillez renseigner un nom complet.
     </div>
   </div>
   <div class="mb-5">
     <label for="email_address" class="sr-only">Addresse Email</label><input
       id="email_address"
       type="email"
-      placeholder="Email Address"
+      placeholder="Addresse Email"
       name="email"
       required
       class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
     />
     <div class="empty-feedback text-red-400 text-sm mt-1">
-      Please provide your email address.
+      Veuillez renseigner une adresse.
     </div>
     <div class="invalid-feedback text-red-400 text-sm mt-1">
-      Please provide a valid email address.
+      Veuillez renseigner une adresse mail valide.
     </div>
   </div>
   <div class="mb-3">
@@ -45,7 +46,7 @@ import Button from "./ui/button.astro";
       class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
     ></textarea>
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-      Please enter your message.
+      Veuillez renseigner un message.
     </div>
   </div>
   <Button type="submit" size="lg" block>Envoyer !</Button>
@@ -87,7 +88,7 @@ import Button from "./ui/button.astro";
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    result.innerHTML = "Sending...";
+    result.innerHTML = "En cours d'envoi...";
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -110,7 +111,7 @@ import Button from "./ui/button.astro";
       })
       .catch((error) => {
         console.log(error);
-        result.innerHTML = "Something went wrong!";
+        result.innerHTML = "une erreur s'est produite!";
       })
       .then(function () {
         form.reset();

@@ -1,42 +1,13 @@
 ---
+import MdxRenderer from "@components/ui/MdxRenderer/MdxRenderer";
 const descriptions = await Astro.glob("../../pages/descriptions/*.{md,mdx}");
 const { id } = Astro.props;
 const content = await descriptions[id].Content();
 const text = await content.props.children;
-console.log(text);
-
-const mdxRenderer = (mdxArr) => {
-  return mdxArr.map((node, index) => {
-    if (typeof node === "string") {
-      return <Fragment>{node}</Fragment>;
-    }
-
-    // If the node is an object with type 'p', render a paragraph
-    if (node.type === "p") {
-      return <p>{node.props.children}</p>;
-    }
-
-    // If the node is an object with type 'h1', render a level one heading
-    if (node.type === "h1") {
-      return <h1>{node.props.children}</h1>;
-    }
-
-    // If the node is an object with type 'h2', render a level two heading
-    if (node.type === "h2") {
-      return <h2>{node.props.children}</h2>;
-    }
-
-    // If the node is an object with type 'h3', render a level three heading
-    if (node.type === "h3") {
-      return <h3>{node.props.children}</h3>;
-    }
-    return null;
-  });
-};
 ---
 
-<section>
-  <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-    <Fragment>{mdxRenderer(text)}</Fragment>
-  </div>
-</section>
+<div class="w-full grid justify-center">
+  <section class="w-8/12 grid gap-5 md:gap-10 text-center justify-self-center">
+    <MdxRenderer client:load mdxText={text} />
+  </section>
+</div>
