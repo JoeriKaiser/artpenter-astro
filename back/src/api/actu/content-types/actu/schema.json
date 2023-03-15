@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actus",
+  "info": {
+    "singularName": "actu",
+    "pluralName": "actus",
+    "displayName": "Actu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "auteur": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "enumeration",
+      "enum": [
+        "Publication",
+        "Mise a jour",
+        "Evenement"
+      ]
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

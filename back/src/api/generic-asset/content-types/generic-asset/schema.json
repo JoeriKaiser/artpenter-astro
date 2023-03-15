@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generic_assets",
+  "info": {
+    "singularName": "generic-asset",
+    "pluralName": "generic-assets",
+    "displayName": "GenericAsset",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "source": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

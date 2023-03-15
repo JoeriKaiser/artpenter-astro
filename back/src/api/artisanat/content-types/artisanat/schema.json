@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artisanats",
+  "info": {
+    "singularName": "artisanat",
+    "pluralName": "artisanats",
+    "displayName": "Artisanat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}
