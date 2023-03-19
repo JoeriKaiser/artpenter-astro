@@ -8,10 +8,10 @@ import { API_GATEWAY } from "@utils/constants";
 import ContactButton from "./ui/contactButton.astro";
 
 const response = await fetch(
-  "http://localhost:1337/api/generic-assets/1?populate=*"
+  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/1?populate=*`
 );
 const data = await response.json();
-// const headerImage = data.data.attributes.source.data.attributes.url;
+const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
 <section class="relative h-[calc(100vh-10vh)] hero">
@@ -37,10 +37,10 @@ const data = await response.json();
     <div class="relative col-span-1 -mr-32 mt-20">
       <img class="z-10 absolute" src={brush3} alt="brush variant 3" />
       <div class="absolute -top-28 ml-16 -mt-32 z-0">
-        <!-- <ImagePane
+        <ImagePane
           src={`${API_GATEWAY}${headerImage}`}
           alt="Welcome art painting"
-        /> -->
+        />
       </div>
       <BrushText
         id="hero-3"

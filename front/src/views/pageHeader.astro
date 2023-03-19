@@ -9,7 +9,7 @@ const { id, title, subtitle, mainBrushColor, secondaryBrushColor } =
   Astro.props;
 
 const response = await fetch(
-  `http://localhost:1337/api/generic-assets/${id}?populate=*`
+  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/${id}?populate=*`
 );
 const data = await response.json();
 const headerImage = data.data.attributes.source.data.attributes.url;

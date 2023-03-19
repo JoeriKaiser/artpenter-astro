@@ -5,7 +5,7 @@ import { COLORS } from "@utils/constants";
 import ListView from "../views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
 
-const response = await fetch(`http://localhost:1337/api/peintures?populate=*`);
+const response = await fetch(`http://${import.meta.env.BACKEND_URL}/api/peintures?populate=*`);
 const data = await response.json();
 ---
 
