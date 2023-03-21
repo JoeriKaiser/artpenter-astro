@@ -9,9 +9,6 @@ import react from "@astrojs/react";
 import node from "@astrojs/node";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/serverless";
-
-// https://astro.build/config
 export default defineConfig({
   site: "https://lea-stauder.art/",
   integrations: [
@@ -24,15 +21,10 @@ export default defineConfig({
       smartypants: true,
       gfm: true,
     }),
-    sitemap({
-      customPages: [
-        "https://lea-stauder.art",
-        "https://lea-stauder.art/contact",
-      ],
-    }),
+    sitemap(),
     svelte(),
     react(),
   ],
   output: "server",
-  adapter: vercel(),
+  adapter: node({ mode: "standalone" }),
 });
