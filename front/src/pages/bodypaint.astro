@@ -2,7 +2,18 @@
 import Description from "@components/decorative/description.astro";
 import Layout from "@layouts/Layout.astro";
 import { COLORS } from "@utils/constants";
+import ListView from "views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
+
+const response = await fetch(`http://${import.meta.env.BACKEND_URL}/api/bodypaints?populate=*`,
+{
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  });
+const data = await response.json();
+console.log("DATA", data.data)
 ---
 
 <Layout title="About">
@@ -14,4 +25,5 @@ import PageHeader from "views/pageHeader.astro";
     id="8"
   />
   <Description id={2} />
+  <ListView client:visible data={data.data} />
 </Layout>
