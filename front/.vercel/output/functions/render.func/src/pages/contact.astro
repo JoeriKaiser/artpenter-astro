@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Button from "@components/ui/button.astro";
+import Contactform from "@components/contactform.astro";
+---
+
+<Layout title="Contact">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">
+          Pour me contacter, c’est ici!
+        </h2>
+        <p class="text-lg leading-relaxed text-gray-800 mt-3">
+          Une question, une demande, une envie, un projet, n’hésitez pas, envoyez moi un message!
+Vous souhaitez être tenu au courant des dernières nouveautés? Suivez moi sur facebook, tik tok ou instagram: @art.penter 
+        </p>
+        <p class="text-lg leading-relaxed text-gray-800 mt-3">Je vous souhaite une très belle journée, et à bientôt!</p>
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="mdi:instagram" />
+            <span>Art.Penter</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="ic:baseline-tiktok" />
+            <span>Art.Penter</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="ic:baseline-facebook" />
+            <span>Art.Penter</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <span>France</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:hello@astroshipstarter.com">leastauder24@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+</Layout>
