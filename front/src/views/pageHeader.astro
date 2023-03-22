@@ -9,27 +9,34 @@ const { id, title, subtitle, mainBrushColor, secondaryBrushColor } =
   Astro.props;
 
 const response = await fetch(
-  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/${id}?populate=*`
+  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/${id}?populate=*`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  }
 );
 const data = await response.json();
 const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
-<section class="grid grid-cols-5 main-section z-0">
+<!-- grid grid-cols-5 -->
+<section class="flex-col lg:grid lg:grid-cols-5 main-section z-0 mt-10">
   <div class="col-span-3 h-full place-items-center grid">
     <div class="w-full">
       <Sectionhead>
         <Fragment slot="title">{title}</Fragment>
         <Fragment slot="desc">{subtitle}</Fragment>
       </Sectionhead>
-      <div class="w-full rotate-180 z-10">
+      <div class="hidden lg:block w-full rotate-180 z-10">
         <Brush width="100%" height="100%" color={mainBrushColor} />
       </div>
     </div>
   </div>
   <div class="col-span-2 w-full grid place-items-center">
-    <div class="relative w-full -mt-52 grid place-items-center">
-      <div class="z-10 absolute rotate-180 mt-56 w-full">
+    <div class="relative w-full lg:-mt-52 grid place-items-center">
+      <div class="z-10 lg:absolute rotate-180 mt-56 w-full">
         <Brush width="100%" height="100%" color={secondaryBrushColor} />
       </div>
       <div class="absolute -mt-10 z-0">
@@ -38,7 +45,7 @@ const headerImage = data.data.attributes.source.data.attributes.url;
           alt="Welcome art painting"
         />
       </div>
-      <div class="absolute top-80">
+      <div class="lg:absolute top-80">
         <ContactButton />
       </div>
     </div>
@@ -47,13 +54,13 @@ const headerImage = data.data.attributes.source.data.attributes.url;
 
 <style>
   * {
-    font-family: "Aloja-Light";
+    font-family: "Aloja-Extended";
   }
   #about-1 {
     width: 400px;
   }
 
   .main-section {
-    height: 45vw;
+    margin-bottom: 40px;
   }
 </style>

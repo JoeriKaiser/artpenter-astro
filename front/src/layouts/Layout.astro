@@ -52,12 +52,12 @@ const makeTitle = title
       }}
     />
   </head>
-  <body class="relative background">
+  <body class="absolute background">
     <Background />
     <section class="left-0 h-15 z-50 pt-20 px-10 w-full">
       <Navbar />
     </section>
-    <main class="relative z-10">
+    <main class="relative">
       <slot />
     </main>
     <Footer />
@@ -68,9 +68,8 @@ const makeTitle = title
         content-visibility: auto;
       }
       @font-face {
-        font-family: "Aloja-Light";
-        src: url("../assets/fonts/Aloja-Light.woff2") format("woff2"),
-          url("../assets/fonts/Aloja-Light.woff") format("woff");
+        font-family: "Aloja-Extended";
+        src: url("../assets/fonts/Aloja Extended.woff") format("woff");
         font-weight: normal;
         font-style: normal;
         font-display: swap;

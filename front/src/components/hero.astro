@@ -8,10 +8,17 @@ import { API_GATEWAY } from "@utils/constants";
 import ContactButton from "./ui/contactButton.astro";
 
 const response = await fetch(
-  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/1?populate=*`
+  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/1?populate=*`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  }
 );
 const data = await response.json();
 const headerImage = data.data.attributes.source.data.attributes.url;
+console.log(`${API_GATEWAY}${headerImage}`)
 ---
 
 <section class="relative h-[calc(100vh-10vh)] hero">
@@ -84,6 +91,6 @@ const headerImage = data.data.attributes.source.data.attributes.url;
     overflow: hidden;
   }
   h1, h2 {
-    font-family: "Aloja-Light";
+    font-family: "Aloja-Extended";
   }
 </style>

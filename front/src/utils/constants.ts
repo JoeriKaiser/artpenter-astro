@@ -1,4 +1,4 @@
-export const API_GATEWAY = import.meta.env.BACKEND_URL;
+export const API_GATEWAY = `http://${import.meta.env.BACKEND_URL}`;
 export const COLORS = {
   black: "#000000",
   white: "#ffffff",
