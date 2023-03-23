@@ -1,10 +1,11 @@
 ---
+import { API_GATEWAY } from "../utils/constants";
+
 import ImagePane from "@components/decorative/imagePane.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import { API_GATEWAY } from "../utils/constants";
-import brush2 from "@assets/brushes/brush2.svg";
 import Brush from "@components/decorative/brush.astro";
 import ContactButton from "@components/ui/contactButton.astro";
+
 const { id, title, subtitle, mainBrushColor, secondaryBrushColor } =
   Astro.props;
 
@@ -17,11 +18,11 @@ const response = await fetch(
     },
   }
 );
+
 const data = await response.json();
 const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
-<!-- grid grid-cols-5 -->
 <section class="flex-col lg:grid lg:grid-cols-5 main-section z-0 mt-10">
   <div class="col-span-3 h-full place-items-center grid">
     <div class="w-full">

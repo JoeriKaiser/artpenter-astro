@@ -1,5 +1,6 @@
 ---
 import MdxRenderer from "@components/ui/MdxRenderer/MdxRenderer";
+
 const descriptions = await Astro.glob("../../pages/descriptions/*.{md,mdx}");
 const { id } = Astro.props;
 const content = await descriptions[id].Content();
