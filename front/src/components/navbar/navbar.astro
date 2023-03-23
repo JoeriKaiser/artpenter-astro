@@ -23,6 +23,7 @@ const menuList = [
       { title: "Bodypaint", path: "/bodypaint" },
     ],
   },
+  // TODO fix actus not being handled by astro build process
   // {
   //   title: "Actu",
   //   path: "/actus",
@@ -50,15 +51,15 @@ const menuList = [
           <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
         <div class="px-10 hidden lg:flex">
-          <div class="flex items-center p-2 mt-2 space-x-2 text-gray-600">
+          <a class="flex items-center p-2 mt-2 space-x-2 text-gray-600" href="https://www.instagram.com/art.penter" target="_blank">
             <Icon class="text-black w-8 h-8" name="mdi:instagram" />
-          </div>
-          <div class="flex items-center p-2 mt-2 space-x-2 text-gray-600">
+          </a>
+          <a class="flex items-center p-2 mt-2 space-x-2 text-gray-600" href="https://www.facebook.com/missive.immersive" target="_blank">
             <Icon class="text-black w-8 h-8" name="ic:baseline-facebook" />
-          </div>
-          <div class="flex items-center p-2 mt-2 space-x-2 text-gray-600">
+          </a>
+          <a class="flex items-center p-2 mt-2 space-x-2 text-gray-600" href="https://www.tiktok.com/@art.penter?_t=8askPEVEu0b&_r=1" target="_blank">
             <Icon class="text-black w-8 h-8" name="ic:baseline-tiktok" />
-          </div>
+          </a>
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
