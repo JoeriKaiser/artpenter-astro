@@ -24,9 +24,6 @@ const Modal = ({ selectedItem, onClose }: Props) => {
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
-  //   console.log("selectedItem", selectedItem.attributes.images.data);
-  console.log(index);
-  console.log(images[index]);
   return (
     <div
       className={`fixed z-50 inset-0 overflow-y-auto modalBackground px-5`}

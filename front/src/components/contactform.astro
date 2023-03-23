@@ -1,6 +1,5 @@
 ---
 import Button from "./ui/button.astro";
-console.log(import.meta.env.FORM_ACCESS_KEY)
 ---
 
 <form
@@ -104,7 +103,6 @@ console.log(import.meta.env.FORM_ACCESS_KEY)
           result.classList.add("text-green-500");
           result.innerHTML = json.message;
         } else {
-          console.log(response);
           result.classList.add("text-red-500");
           result.innerHTML = json.message;
         }
