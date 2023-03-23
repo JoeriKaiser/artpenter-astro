@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 
 import react from "@astrojs/react";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: "https://lea-stauder.art/",
@@ -29,6 +29,6 @@ export default defineConfig({
     svelte(),
     react(),
   ],
-  output: "static",
+  output: "server",
   adapter: vercel(),
 });
