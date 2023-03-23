@@ -1,9 +1,8 @@
 ---
 import { Icon } from "astro-icon";
+
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Button from "@components/ui/button.astro";
 import Contactform from "@components/contactform.astro";
 ---
 
@@ -20,26 +19,30 @@ Vous souhaitez être tenu au courant des dernières nouveautés? Suivez moi sur 
         </p>
         <p class="text-lg leading-relaxed text-gray-800 mt-3">Je vous souhaite une très belle journée, et à bientôt!</p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+          <a href="https://www.instagram.com/art.penter/" target="_blank" referrerpolicy="no-referrer" class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="mdi:instagram" />
             <span>Art.Penter</span>
-          </div>
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="ic:baseline-tiktok" />
-            <span>Art.Penter</span>
-          </div>
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="ri:external-link-line" />
+          </a>
+          <a href="https://www.facebook.com/missive.immersive" target="_blank" referrerpolicy="no-referrer" class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="ic:baseline-facebook" />
             <span>Art.Penter</span>
-          </div>
+            <Icon class="text-gray-400 w-4 h-4" name="ri:external-link-line" />
+          </a>
+          <a href="https://www.tiktok.com/@art.penter?_t=8askPEVEu0b&_r=1" target="_blank" referrerpolicy="no-referrer" class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="ic:baseline-tiktok" />
+            <span>Art.Penter</span>
+            <Icon class="text-gray-400 w-4 h-4" name="ri:external-link-line" />
+          </a>
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
             <span>France</span>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com">leastauder24@gmail.com</a
+              href="mailto:leastauder31@gmail.com">leastauder31@gmail.com</a
             >
+            <Icon class="text-gray-400 w-4 h-4" name="ri:external-link-line" />
           </div>
         </div>
       </div>
