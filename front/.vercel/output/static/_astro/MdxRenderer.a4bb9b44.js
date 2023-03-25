@@ -1,0 +1,9 @@
+/* empty css                       */import{r as x}from"./index.45a47ed6.js";var e={},f={get exports(){return e},set exports(s){e=s}},c={};/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var m=x,y=Symbol.for("react.element"),_=Symbol.for("react.fragment"),j=Object.prototype.hasOwnProperty,R=m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,v={key:!0,ref:!0,__self:!0,__source:!0};function u(s,t,i){var r,p={},l=null,n=null;i!==void 0&&(l=""+i),t.key!==void 0&&(l=""+t.key),t.ref!==void 0&&(n=t.ref);for(r in t)j.call(t,r)&&!v.hasOwnProperty(r)&&(p[r]=t[r]);if(s&&s.defaultProps)for(r in t=s.defaultProps,t)p[r]===void 0&&(p[r]=t[r]);return{$$typeof:y,type:s,key:l,ref:n,props:p,_owner:R.current}}c.Fragment=_;c.jsx=u;c.jsxs=u;(function(s){s.exports=c})(f);const N=({mdxText:s})=>{const t=i=>i.map((r,p)=>r.type==="p"?e.jsx("p",{className:"text-xl",children:r.props.children},p):r.type==="h1"?e.jsx("h1",{className:"title text-4xl",children:r.props.children},p):r.type==="h2"?e.jsx("h2",{className:"subtitle text-2xl",children:r.props.children},p):r.type==="h3"?e.jsx("h3",{className:"subtitle italic text-2xl",children:r.props.children},p):r.type==="table"?e.jsx("table",{className:"styled-table",children:r.props.children.map((l,n)=>{if(l.type==="thead")return e.jsx("thead",{children:e.jsx("tr",{children:l.props.children.props.children.map((o,h)=>e.jsx("th",{children:o.props.children},h))},n+1)},n);if(l.type==="tbody")return e.jsx("tbody",{children:l.props.children.map((o,h)=>e.jsx("tr",{children:o.props.children.map((a,d)=>e.jsx("td",{children:a.props.children},d))},h))},n)})},p):null);return e.jsx(e.Fragment,{children:t(s)})};export{N as default};
