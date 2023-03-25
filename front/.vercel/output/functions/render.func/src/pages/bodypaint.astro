@@ -1,0 +1,30 @@
+---
+import Description from "@components/decorative/description.astro";
+import Layout from "@layouts/Layout.astro";
+import { COLORS } from "@utils/constants";
+import ListView from "views/ListView/ListView";
+import PageHeader from "views/pageHeader.astro";
+
+const response = await fetch(`http://${import.meta.env.BACKEND_URL}/api/bodypaints?populate=*&sort=rank:asc`,
+{
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  });
+const data = await response.json();
+---
+
+<Layout title="Bodypaint">
+  <PageHeader
+    mainBrushColor={COLORS.blueDark}
+    secondaryBrushColor={COLORS.purpleDark}
+    title="BODYPAINT"
+    subtitle="Qu'est-ce que c'est? Comment se déroule une séance?"
+    id="8"
+  />
+  <Description id={2} />
+  {data && (
+    <ListView client:load data={data.data} />
+  )}
+</Layout>
