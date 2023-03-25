@@ -1,0 +1,40 @@
+---
+import { Dropdown, DropdownItems } from "astro-navbar";
+import Icon from "astro-icon";
+
+const { title, lastItem, children } = Astro.props;
+---
+
+<li class="relative">
+  <Dropdown class="group">
+    <button
+      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+      <span style={{ fontWeight: "700" }}>{title}</span>
+      <Icon
+        name="mdi:chevron-down"
+        class="w-4 h-4 group-hover:text-gray-900" />
+    </button>
+    <DropdownItems>
+      <div
+        class:list={[
+          "lg:absolute  w-full  lg:w-48",
+          lastItem
+            ? "lg:right-0 origin-top-right"
+            : "lg:left-0 origin-top-left",
+        ]}>
+        <div
+          class="bg-slate-400 px-3 lg:py-2 bg-opacity-50 lg:rounded-md flex flex-col lg:absolute">
+          {
+            children.map((item) => (
+              <a
+                href={item.path}
+                class="z-50 py-1 text-gray-600 hover:font-semibold hover:text-gray-900 cursor-pointer">
+                {item.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </DropdownItems>
+  </Dropdown>
+</li>
