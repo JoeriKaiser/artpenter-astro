@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { PUBLIC_API_GATEWAY } from "../../utils/constants";
 import { Work } from "../ListView/ListView";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles.css";
 
 type Props = {
@@ -44,7 +44,7 @@ const Modal = ({ selectedItem, onClose }: Props) => {
               <div className="mt-2">{selectedItem.attributes.description}</div>
             </div>
             <div className="mt-2">
-              <Carousel
+              {/* <Carousel
                 showThumbs={true}
                 showArrows={true}
                 showStatus={false}
@@ -63,7 +63,7 @@ const Modal = ({ selectedItem, onClose }: Props) => {
                     />
                   </div>
                 ))}
-              </Carousel>
+              </Carousel> */}
             </div>
           </div>
         </div>
