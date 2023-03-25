@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { API_GATEWAY } from "../../utils/constants";
+
+import { PUBLIC_API_GATEWAY } from "../../utils/constants";
 import { Work } from "../ListView/ListView";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles.css";
 
 type Props = {
@@ -9,21 +12,7 @@ type Props = {
 };
 
 const Modal = ({ selectedItem, onClose }: Props) => {
-  const [index, setIndex] = useState(0);
-
   const images = selectedItem.attributes.images.data;
-
-  const handlePrev = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNext = () => {
-    setIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
   return (
     <div
       className={`fixed z-50 inset-0 overflow-y-auto modalBackground px-5`}
@@ -55,46 +44,26 @@ const Modal = ({ selectedItem, onClose }: Props) => {
               <div className="mt-2">{selectedItem.attributes.description}</div>
             </div>
             <div className="mt-2">
-              <img
-                src={`${API_GATEWAY}${images[index].attributes.url}`}
-                alt=""
-              />
-              <div className="flex justify-between mt-4">
-                <button
-                  className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
-                  onClick={handlePrev}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
+              {/* <Carousel
+                showThumbs={true}
+                showArrows={true}
+                showStatus={false}
+                showIndicators={true}
+                infiniteLoop={true}
+                centerMode={true}
+                centerSlidePercentage={80}
+                transitionTime={500}
+                swipeable={true}
+                dynamicHeight={false}>
+                {images.map((image, index) => (
+                  <div className="p-2" key={index}>
+                    <img
+                      src={`${PUBLIC_API_GATEWAY}${image.attributes.url}`}
+                      alt=""
                     />
-                  </svg>
-                </button>
-                <button
-                  className="ml-4 text-gray-500 hover:text-gray-800 transition-colors duration-300"
-                  onClick={handleNext}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
+                  </div>
+                ))}
+              </Carousel> */}
             </div>
           </div>
         </div>

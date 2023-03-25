@@ -2,7 +2,17 @@
 import Description from "@components/decorative/description.astro";
 import Layout from "@layouts/Layout.astro";
 import { COLORS } from "@utils/constants";
+import ListView from "views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
+
+const response = await fetch(`http://${import.meta.env.BACKEND_URL}/api/ateliers?populate=*`,
+{
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  });
+const data = await response.json();
 ---
 
 <Layout title="Ateliers">
@@ -14,4 +24,7 @@ import PageHeader from "views/pageHeader.astro";
     id="10"
   />
   <Description id={1} />
+  {data && (
+    <ListView client:load data={data && data.data} />
+  )}
 </Layout>

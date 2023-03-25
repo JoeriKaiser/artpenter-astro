@@ -17,19 +17,23 @@ export type Work = {
 };
 
 const ListView = ({ data }) => {
-  const [selectedWork, setSelectedWork] = useState<Work | undefined>(undefined);
+  const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   return (
     <div className="w-full p-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-16">
-      {data.map((item, index) => (
+      {data.map((item: Work, index: number) => (
         <div
           key={index}
           role="button"
-          onClick={() => setSelectedWork(item)}
+          onClick={() => {
+            setSelectedWork(item);
+          }}
           className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer"
           style={{ backgroundColor: COLORS.white }}>
           <img
             className="object-cover w-full h-80"
-            src={`${API_GATEWAY}${item.attributes.images.data[0].attributes.url}`}
+            src={`http://${import.meta.env.BACKEND_URL}${
+              item.attributes.images.data[0].attributes.url
+            }`}
             alt=""
           />
           <div className="px-6 py-4">
@@ -46,7 +50,7 @@ const ListView = ({ data }) => {
       ))}
       {selectedWork && (
         <Modal
-          onClose={() => setSelectedWork(undefined)}
+          onClose={() => setSelectedWork(null)}
           selectedItem={selectedWork}
         />
       )}

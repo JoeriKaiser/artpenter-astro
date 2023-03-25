@@ -24,5 +24,7 @@ const data = await response.json();
     id="3"
   />
   <Description id={4} />
-  <ListView client:visible data={data.data} />
+  {data && (
+    <ListView client:load data={data.data} />
+  )}
 </Layout>
