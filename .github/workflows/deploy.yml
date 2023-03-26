@@ -5,7 +5,7 @@ jobs:
   deploy:
   defaults:
   run:
-    working-directory: dart_project
+    working-directory: front
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
