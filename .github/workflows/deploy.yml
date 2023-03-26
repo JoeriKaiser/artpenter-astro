@@ -3,9 +3,9 @@ on: [push]
 
 jobs:
   deploy:
-  defaults:
-  run:
-    working-directory: front
+    defaults:
+      run:
+        working-directory: front
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
