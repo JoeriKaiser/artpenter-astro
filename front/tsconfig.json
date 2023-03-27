@@ -1,6 +1,6 @@
 {
   "extends": "astro/tsconfigs/base",
-  "include": ["src/components/*", "src/custom.d.ts"],
+  "include": ["../front"],
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
