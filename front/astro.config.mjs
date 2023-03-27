@@ -13,5 +13,10 @@ export default defineConfig({
     gfm: true
   })],
   output: "server",
-  adapter: deno()
+  adapter: deno(),
+  vite: {
+    ssr: {
+      external: ['svgo']
+    }
+  }
 });

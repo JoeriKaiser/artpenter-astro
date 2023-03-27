@@ -1,6 +1,5 @@
 ---
 import { Dropdown, DropdownItems } from "astro-navbar";
-import Icon from "astro-icon";
 
 const { title, lastItem, children } = Astro.props;
 ---
@@ -10,9 +9,10 @@ const { title, lastItem, children } = Astro.props;
     <button
       class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900">
       <span style={{ fontWeight: "700" }}>{title}</span>
-      <Icon
-        name="mdi:chevron-down"
-        class="w-4 h-4 group-hover:text-gray-900" />
+      <span
+        class="iconify-inline w-4 h-4 group-hover:text-gray-900"
+        data-icon="mdi:chevron-down"
+        data-height="24"></span>
     </button>
     <DropdownItems>
       <div
@@ -38,3 +38,7 @@ const { title, lastItem, children } = Astro.props;
     </DropdownItems>
   </Dropdown>
 </li>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.0.0-beta.3/iconify.min.js"
+></script>

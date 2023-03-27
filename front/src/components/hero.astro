@@ -13,7 +13,7 @@ const response = await fetch(
   {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`,
     },
   }
 );
@@ -22,7 +22,8 @@ const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
 <section class="relative h-[calc(100vh-10vh)] hero">
-  <div class="z-0 absolute top-56 my-auto grid-cols-3 grid-rows-2 hidden lg:grid">
+  <div
+    class="z-0 absolute top-56 my-auto grid-cols-3 grid-rows-2 hidden lg:grid">
     <div class="relative col-span-1 -ml-32 mt-28">
       <img src={brush1} alt="brush variant 1" />
       <BrushText
@@ -33,7 +34,7 @@ const headerImage = data.data.attributes.source.data.attributes.url;
       />
     </div>
     <div class="relative col-span-1 -mx-16">
-      <img class="absolute z-10 " src={brush2} alt="brush variant 2" />
+      <img class="absolute z-10" src={brush2} alt="brush variant 2" />
       <BrushText
         id="hero-2"
         title=" la vie mais de rendre vivante"
@@ -58,13 +59,17 @@ const headerImage = data.data.attributes.source.data.attributes.url;
     </div>
   </div>
   <main class="grid lg:grid-cols-2 place-items-left pt-0 lg:pt-16 pb-8 md:pt-8">
-    <div class="absolute top-12 md:top-40 z-20 flex flex-col md:flex-row text-center">
+    <div
+      class="absolute top-12 md:top-40 z-20 flex flex-col md:flex-row text-center">
       <h1 class="text-6xl mt-4 text-slate-600 max-w-full leading-snug">
         Léa<br />
         Stauder
       </h1>
       <div class="">
-        <h2 class="lg:hidden py-4 text-2xl text-center">Il ne s'agit pas de peindre  la vie mais de rendre vivante la peinture... Pierre Bonnard</h2>
+        <h2 class="lg:hidden py-4 text-2xl text-center">
+          Il ne s'agit pas de peindre la vie mais de rendre vivante la
+          peinture... Pierre Bonnard
+        </h2>
         <img class="lg:hidden w-full" src={brush1} alt="brush variant 3" />
       </div>
     </div>
@@ -74,7 +79,8 @@ const headerImage = data.data.attributes.source.data.attributes.url;
   body {
     overflow: hidden;
   }
-  h1, h2 {
+  h1,
+  h2 {
     font-family: "Aloja-Extended";
   }
 </style>
