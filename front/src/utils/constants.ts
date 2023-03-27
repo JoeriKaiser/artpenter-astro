@@ -1,6 +1,6 @@
-export const API_GATEWAY = `http://${import.meta.env.PUBLIC_BACKEND_URL}`;
+export const API_GATEWAY = `http://${Deno.env.get("PUBLIC_BACKEND_URL")}`;
 export const PUBLIC_API_GATEWAY = `http://${
-  import.meta.env.PUBLIC_BACKEND_URL
+  Deno.env.get("PUBLIC_BACKEND_URL")
 }`;
 export const COLORS = {
   black: "#000000",

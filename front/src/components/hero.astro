@@ -8,17 +8,14 @@ import brush1 from "@assets/brushes/brush1.svg";
 import brush2 from "@assets/brushes/brush2.svg";
 import brush3 from "@assets/brushes/brush3.svg";
 
-// const response = await fetch(
-//   `http://vps-47f8f81c.vps.ovh.net:81/api/generic-assets/1?populate=*`,
-//   {
-//     method: "GET",
-//     headers: {
-//       Authorization: `Bearer ${import.meta.env.API_TOKEN}`,
-//     },
-//   }
-// );
-// const data = await response.json();
-// const headerImage = data.data.attributes.source.data.attributes.url;
+const response = await fetch(`http://${Deno.env.get("PUBLIC_BACKEND_URL")}`, {
+  method: "GET",
+  headers: {
+    Authorization: `Bearer ${Deno.env.get("API_TOKEN")}`,
+  },
+});
+const data = await response.json();
+const headerImage = data.data.attributes.source.data.attributes.url;
 ---
 
 <section class="relative h-[calc(100vh-10vh)] hero">
@@ -45,10 +42,10 @@ import brush3 from "@assets/brushes/brush3.svg";
     <div class="relative col-span-1 -mr-32 mt-20">
       <img class="z-10 absolute" src={brush3} alt="brush variant 3" />
       <div class="absolute -top-28 ml-16 -mt-32 z-0">
-        <!-- <ImagePane
+        <ImagePane
           src={`vps-47f8f81c.vps.ovh.net:81${headerImage}`}
           alt="Welcome art painting"
-        /> -->
+        />
       </div>
       <BrushText
         id="hero-3"
