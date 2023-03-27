@@ -1,4 +1,4 @@
-export const API_GATEWAY = `http://${import.meta.env.BACKEND_URL}`;
+export const API_GATEWAY = `http://${import.meta.env.PUBLIC_BACKEND_URL}`;
 export const PUBLIC_API_GATEWAY = `http://${
   import.meta.env.PUBLIC_BACKEND_URL
 }`;

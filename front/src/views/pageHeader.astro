@@ -10,11 +10,13 @@ const { id, title, subtitle, mainBrushColor, secondaryBrushColor } =
   Astro.props;
 
 const response = await fetch(
-  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/${id}?populate=*`,
+  `http://${
+    import.meta.env.PUBLIC_BACKEND_URL
+  }/api/generic-assets/${id}?populate=*`,
   {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`,
     },
   }
 );

@@ -9,7 +9,9 @@ import brush2 from "@assets/brushes/brush2.svg";
 import brush3 from "@assets/brushes/brush3.svg";
 
 const response = await fetch(
-  `http://${import.meta.env.BACKEND_URL}/api/generic-assets/1?populate=*`,
+  `http://${
+    import.meta.env.PUBLIC_BACKEND_URL
+  }/api/generic-assets/1?populate=*`,
   {
     method: "GET",
     headers: {
