@@ -5,18 +5,18 @@ import { COLORS } from "@utils/constants";
 import ListView from "../views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
 
-const response = await fetch(
-  `http://${
-    import.meta.env.PUBLIC_BACKEND_URL
-  }/api/peintures?populate=*&sort=rank:asc`,
-  {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${import.meta.env.API_TOKEN}`,
-    },
-  }
-);
-const data = await response.json();
+// const response = await fetch(
+//   `http://${
+//     import.meta.env.PUBLIC_BACKEND_URL
+//   }/api/peintures?populate=*&sort=rank:asc`,
+//   {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Bearer ${import.meta.env.API_TOKEN}`,
+//     },
+//   }
+// );
+// const data = await response.json();
 ---
 
 <Layout title="Oeuvres">
@@ -28,5 +28,5 @@ const data = await response.json();
     id="3"
   />
   <Description id={4} />
-  {data && <ListView client:load data={data.data} />}
+  <!-- {data && <ListView client:load data={data.data} />} -->
 </Layout>
