@@ -32,5 +32,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "artpenter-astro"
-          entrypoint: "server/entry.mjs"
-          root: "dist"
+          entrypoint: "dist/server/entry.mjs"
+          root: "front"
