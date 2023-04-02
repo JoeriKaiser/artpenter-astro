@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * artisanat router
+ * issue router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::artisanat.artisanat');
+module.exports = createCoreRouter('api::issue.issue');

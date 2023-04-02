@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * artisanat controller
+ * atelier controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::artisanat.artisanat');
+module.exports = createCoreController('api::atelier.atelier');
