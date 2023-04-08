@@ -3,10 +3,9 @@ import Description from "@components/decorative/description.astro";
 import Layout from "@layouts/Layout.astro";
 import { COLORS } from "@utils/constants";
 import ListView from "views/ListView/ListView";
-// import ListView from "views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
 
-const response = await fetch(`http://${import.meta.env.BACKEND_URL}/api/ateliers?populate=*&sort=rank:asc`,
+const response = await fetch(`http://${import.meta.env.PUBLIC_BACKEND_URL}/api/ateliers?populate=*&sort=rank:asc`,
 {
     method: "GET",
     headers: {
