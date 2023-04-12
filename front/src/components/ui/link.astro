@@ -4,16 +4,12 @@ interface Props {
   size?: "md" | "lg";
   block?: boolean;
   style?: "outline" | "primary" | "inverted" | "muted";
-  class?: string;
   [x: string]: any;
 }
 
 const {
   href,
   block,
-  size = "lg",
-  style = "primary",
-  class: className,
   ...rest
 } = Astro.props;
 
@@ -38,9 +34,6 @@ const styles = {
   class:list={[
     "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 text-black",
     block && "w-full",
-    sizes[size],
-    styles[style],
-    className,
   ]}
   ><slot />
 </a>
