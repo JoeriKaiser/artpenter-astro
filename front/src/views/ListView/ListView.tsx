@@ -31,7 +31,7 @@ const ListView = ({ data }) => {
           style={{ backgroundColor: COLORS.white }}>
           <img
             className="object-cover w-full h-80"
-            src={`http://${import.meta.env.PUBLIC_BACKEND_URL}${
+            src={`https://${import.meta.env.PUBLIC_BACKEND_URL}${
               item.attributes.images.data[0].attributes.url
             }`}
             alt=""
