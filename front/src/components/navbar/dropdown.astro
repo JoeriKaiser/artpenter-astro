@@ -1,12 +1,12 @@
 ---
-import { Dropdown, DropdownItems } from "astro-navbar";
+import { Dropdown as ADropdown, DropdownItems } from "astro-navbar";
 import Icon from "astro-icon";
 
 const { title, lastItem, children } = Astro.props;
 ---
 
 <li class="relative">
-  <Dropdown class="group">
+  <ADropdown class="group">
     <button
       class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900">
       <span style={{ fontWeight: "700" }}>{title}</span>
@@ -36,5 +36,5 @@ const { title, lastItem, children } = Astro.props;
         </div>
       </div>
     </DropdownItems>
-  </Dropdown>
+  </ADropdown>
 </li>
