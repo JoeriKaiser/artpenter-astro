@@ -5,7 +5,7 @@ import { COLORS } from "@utils/constants";
 import ListView from "../views/ListView/ListView";
 import PageHeader from "views/pageHeader.astro";
 
-const response = await fetch(`https://${import.meta.env.PUBLIC_BACKEND_URL}/api/actus?populate=*&sort=rank:asc`,
+const response = await fetch(`https://${import.meta.env.PUBLIC_BACKEND_URL}/api/actu?populate=*&sort=rank:asc`,
 {
     method: "GET",
     headers: {
@@ -24,7 +24,7 @@ const data = await response.json();
     id="5"
   />
   <!-- <Description id={5} /> -->
-  {data && (
+  <!-- {data && (
     <ListView client:load data={data.data} />
-  )}
+  )} -->
 </Layout>
