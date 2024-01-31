@@ -8,6 +8,9 @@ import PageHeader from "@views/pageHeader.astro";
 ---
 
 <Layout title="Presentation">
+  <Container>
+    <Hero />
+  </Container>
   <PageHeader
     mainBrushColor={COLORS.black}
     secondaryBrushColor={COLORS.purpleLight}
@@ -15,5 +18,4 @@ import PageHeader from "@views/pageHeader.astro";
     id="2"
   />
   <Description id={0} />
-  <Hero />
 </Layout>
