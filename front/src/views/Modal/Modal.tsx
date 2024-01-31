@@ -45,11 +45,11 @@ const Modal = ({ selectedItem, onClose }: Props) => {
             </div>
             <div className="mt-2">
               <Carousel
-                showThumbs={true}
+                showThumbs={false}
                 showArrows={true}
                 showStatus={false}
                 showIndicators={true}
-                infiniteLoop={true}
+                infiniteLoop={false}
                 centerMode={true}
                 centerSlidePercentage={80}
                 transitionTime={500}
