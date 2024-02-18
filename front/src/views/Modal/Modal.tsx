@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { PUBLIC_API_GATEWAY } from "../../utils/constants";
-import { Work } from "../ListView/ListView";
+import type { Work } from "../ListView/ListView";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles.css";
@@ -46,12 +46,10 @@ const Modal = ({ selectedItem, onClose }: Props) => {
             <div className="mt-2">
               <Carousel
                 showThumbs={false}
-                showArrows={true}
                 showStatus={false}
-                showIndicators={true}
                 infiniteLoop={false}
-                centerMode={true}
-                centerSlidePercentage={80}
+                centerMode={false}
+                centerSlidePercentage={100}
                 transitionTime={500}
                 swipeable={true}
                 dynamicHeight={false}>
