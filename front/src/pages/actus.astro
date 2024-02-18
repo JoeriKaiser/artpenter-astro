@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { COLORS } from "@utils/constants";
+import ActuListView from "@views/ListView/ActuListView";
+import PageHeader from "@views/pageHeader.astro";
+
+const response = await fetch(`https://${import.meta.env.PUBLIC_BACKEND_URL}/api/actus?populate=*`,
+{
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.API_TOKEN}`
+    },
+  });
+const data = await response.json();
+---
+
+<Layout title="Actus">
+  <PageHeader
+    mainBrushColor={COLORS.purpleLight}
+    secondaryBrushColor={COLORS.black}
+    title="ACTUS"
+    subtitle="Actualités du moment"
+    id="11"
+  />
+  <!-- <Description id={5} /> -->
+  {data && (
+    <ActuListView client:load data={data.data} />
+  )}
+</Layout>

@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { PUBLIC_API_GATEWAY } from "../../utils/constants";
-import type { Work } from "../ListView/ListView";
 import { Carousel } from "react-responsive-carousel";
+import { Actu } from "@views/ListView/ActuListView";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles.css";
 
 type Props = {
-  selectedItem: Work;
+  selectedItem: Actu;
   onClose: () => void;
 };
 
-const Modal = ({ selectedItem, onClose }: Props) => {
-  const images = selectedItem.attributes.images.data;
+const ActuModal = ({ selectedItem, onClose }: Props) => {
+  const images = selectedItem.attributes.thumbnail.data;
   return (
     <div
       className={`fixed z-50 inset-0 overflow-y-auto modalBackground px-5`}
@@ -41,15 +41,17 @@ const Modal = ({ selectedItem, onClose }: Props) => {
               <h2 className="text-xl font-bold leading-6 text-gray-900">
                 {selectedItem.attributes.title}
               </h2>
-              <div className="mt-2">{selectedItem.attributes.description}</div>
+              <div className="mt-2">{selectedItem.attributes.excerpt}</div>
             </div>
             <div className="mt-2">
               <Carousel
-                showThumbs={false}
+                showThumbs={true}
+                showArrows={true}
                 showStatus={false}
-                infiniteLoop={false}
-                centerMode={false}
-                centerSlidePercentage={100}
+                showIndicators={true}
+                infiniteLoop={true}
+                centerMode={true}
+                centerSlidePercentage={80}
                 transitionTime={500}
                 swipeable={true}
                 dynamicHeight={false}>
@@ -70,4 +72,4 @@ const Modal = ({ selectedItem, onClose }: Props) => {
   );
 };
 
-export default Modal;
+export default ActuModal;
